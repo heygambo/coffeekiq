@@ -18,7 +18,3 @@ coffeekiq = new CoffeeKiq "redis_port", "redis_host"
 # Enqueues a Job to redis
 coffeekiq.perform 'queue', 'WorkerClass', ['arg1', 'arg2']
 ```
-
-## TODO
-
-* Inherit from EventEmitter and provide Callbacks
