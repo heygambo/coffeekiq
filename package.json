@@ -1,6 +1,6 @@
 {
   "name": "coffeekiq",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Coffeescript/Node.js Library to enqueue jobs to the Sidekiq Queue.",
   "homepage": "https://github.com/nerdyglasses/coffeekiq",
   "keywords": [

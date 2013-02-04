@@ -21,7 +21,7 @@ class CoffeeKiq extends EventEmitter
     
   perform: (queue, klass, args, options = {}) ->
     if @connected
-      if !options.namespace? then namespace = "" else namespace = "#{options.namespace}:"
+      if !options.namespace? then namespace = "" else namespace = options.namespace
       if !options.retry? then retry = false else retry = true
       crypto.randomBytes 12, (ex, buf) =>
         payload = JSON.stringify
