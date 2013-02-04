@@ -21,8 +21,7 @@ class CoffeeKiq extends EventEmitter
     
   perform: (queue, klass, args, options = {}) ->
     if @connected
-      util.log "performing"
-      if !options.namespace? then namespace = "" else namespace = options.namespace
+      if !options.namespace? then namespace = "" else namespace = "#{options.namespace}:"
       if !options.retry? then retry = false else retry = true
       crypto.randomBytes 12, (ex, buf) =>
         payload = JSON.stringify
@@ -30,10 +29,7 @@ class CoffeeKiq extends EventEmitter
           class: klass
           args: args
           jid: buf.toString 'hex'
-        
-        # util.log "= PUSHING ="
-        # util.log "sadd: #{_.compact([namespace, "queues"]).join(":")} => #{queue}"
-        # util.log "lpush: #{_.compact([namespace, "queue", queue]).join(":")} => #{payload}"
+
         @redis_client.sadd(_.compact([namespace, "queues"]).join(":"), queue)
         @redis_client.lpush(_.compact([namespace, "queue", queue]).join(":"), payload)
         @emit 'perform:done'
