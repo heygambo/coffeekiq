@@ -8,7 +8,7 @@ Feel free to contribute.
 
 ## USAGE
 
-First, you'll want to queue some jobs in your app:
+You can add `coffeekiq: "~>0.0.1"` into your `package.json` or use `npm install coffeekiq`
 
 ```coffeescript
 # Creates an instance of CoffeeKiq
