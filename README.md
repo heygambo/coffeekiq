@@ -1,6 +1,6 @@
 # CoffeeKiq
 
-Coffeescript/Node.js Library to enqueue Jobs to Sidekiq.
+Coffeescript/Node.js Library to enqueue jobs to the Sidekiq Queue.
 
 This is a very trivial implementation. I will implement more features when I need them.
 Feel free to contribute.

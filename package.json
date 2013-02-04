@@ -2,33 +2,36 @@
   "name": "coffeekiq",
   "version": "0.0.1",
   "description": "Coffeescript/Node.js Library to enqueue jobs to the Sidekiq Queue.",
-  "keywords": [
-    "sidekiq"
-  , "redis"
-  , "queue"
-  , "coffee script"
-  ],
   "homepage": "https://github.com/nerdyglasses/coffeekiq",
+  "keywords": [
+    "sidekiq",
+    "redis",
+    "queue",
+    "coffee script"
+  ],
   "author": {
     "name": "Christian Gambardella",
     "email": "hi@nerdyglass.es",
     "url": "http://nerdyglass.es"
   },
-  "main": "./lib/index",
+  "main": "lib/index.js",
   "directories": {
     "lib": "./lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/nerdyglasses/coffeekiq.git"
   },
   "dependencies": {
-    "hiredis": "~>0.1.14"
-  , "redis": "~>0.8.2"
-  , "underscore": "*"
+    "redis": "~>0.8.2",
+    "underscore": "*",
+    "events": "*",
+    "util": "*",
+    "crypto": "*"
   },
-  "engines": {
-    "node": ">= 0.8.14"
-  },
+  "license": "MIT",
   "readmeFilename": "README.md"
 }
