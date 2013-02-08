@@ -19,7 +19,7 @@ coffeekiq = new CoffeeKiq "redis_port", "redis_host"
 coffeekiq.perform 'queue', 'WorkerClass', ['arg1', 'arg2']
 
 # Enqueues a Job to redis with namespace: "myapp:staging" and retry: true
-coffeekiq.perform 'queue', 'WorkerClass', ['arg1', 'arg2']
+coffeekiq.perform 'queue', 'WorkerClass', ['arg1', 'arg2'],
   namespace: "myapp:staging"
   retry: true
 
