@@ -7,15 +7,17 @@ redis = require 'redis'
 _ = require 'underscore'
 
 class CoffeeKiq extends EventEmitter
-  constructor: (redis_port, redis_host) ->
+  constructor: (redis_port, redis_host, redis_password = null) ->
     throw new Error 'CoffeeKiq: Init like this: new CoffeeKiq(redis_port, redis_host)' if !redis_port? || !redis_host?
     @redis_port = redis_port
     @redis_host = redis_host
+    @redis_password = redis_password
     @connected = false
     @connect()
     
   connect: ->
     @redis_client = redis.createClient @redis_port, @redis_host
+    @redis_client.auth @redis_password unless @redis_password == null
     @redis_client.on 'ready', @on_redis_ready
     @redis_client.on 'error', @on_redis_error
     
