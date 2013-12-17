@@ -5,7 +5,6 @@ Coffeescript/Node.js Library to enqueue jobs to the Sidekiq Queue.
 This is a very trivial implementation. I will implement more features when I need them.
 Feel free to contribute.
 
-
 ## USAGE
 
 You can add `coffeekiq: "~>0.0.1"` into your `package.json` or use `npm install coffeekiq`
@@ -13,7 +12,12 @@ You can add `coffeekiq: "~>0.0.1"` into your `package.json` or use `npm install 
 ```coffeescript
 # Creates an instance of CoffeeKiq
 CoffeeKiq = require('coffeekiq').CoffeeKiq
+
+# Without Redis AUTH
 coffeekiq = new CoffeeKiq "redis_port", "redis_host"
+
+# With Redis AUTH
+coffeekiq = new CoffeeKiq "redis_port", "redis_host", "redis_password"
 
 # Enqueues a Job to redis namespace: "" and retry: false
 coffeekiq.perform 'queue', 'WorkerClass', ['arg1', 'arg2']
